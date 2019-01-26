@@ -1,0 +1,7 @@
+{
+    "env":"qa",
+    "firestore":{
+        "persistence":true
+    },
+    "store":"cenacle"
+}

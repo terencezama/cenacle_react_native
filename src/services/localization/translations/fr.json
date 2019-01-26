@@ -1,0 +1,75 @@
+{
+    "loading": "Chargement...",
+    "welcome_msg":"Cenacle du Saint Esprit",
+    "welcome_title":"Au nom de Jesus Christ Bienvenue",
+
+    "registration_title":"Inscription",
+    "registration_submit":"S'inscrire",
+
+    "login_title":"Connexion",
+    "login_submit":"Se connecter",
+
+    "forgot_title":"Mot de passe oublié",
+    "forgot_submit":"Soumettre",
+
+    "field_nickname":"Nom Préféré",
+    "field_email":"Email",
+    "field_password":"Mot de passe",
+    "field_mobile":"Numéro de portable",
+
+    "shares_title":"Partages",
+
+    "events_title":"Évenements",
+    "events_call":"Cliquer pour appeler",
+    "events_loc":"Localiser",
+    "events_plan":"Cliquer pour planifier",
+
+    "summaries_title":"Résumé",
+
+    "bible_title":"Bible",
+    "bible_book_alphabetical":"Alphabétique",
+    "bible_book_traditional":"Traditionnel",
+
+    "welcome_continue":"Continuer",
+
+    "validation_invalid_email":"Email invalide",
+    "validation_required":"Champs obligatoires",
+    "validation_too_short":"Trop court",
+    "validation_mobile":"Numero de portable invalide",
+
+    "success-forgetpassword":"Un e-mail avec le lien de réinitialisation vous a été envoyé. Vérifiez s'il vous plaît.",
+
+    "auth/account-exists-with-different-credential":"Le compte existe déjà",
+    "auth/invalid-credential":"Accréditation non valide",
+    "auth/operation-not-allowed":"Opération non autorisée",
+    "auth/user-disabled":"Utilisateur désactivé",
+    "auth/user-not-found":"Utilisateur non trouvé",
+    "auth/wrong-password":"Mauvais mot de passe",
+    "auth/invalid-verification-code":"Code de vérification invalide",
+    "auth/invalid-verification-id":"Identifiant de validation incorrect",
+    "auth/email-already-in-use":"Email déjà utilisé",
+    "auth/invalid-email":"Adresse e-mail invalide",
+    "auth/weak-password":"Le mot de passe est faible",
+
+    "menu/bible":"Bible LSG",
+    "menu/shares":"Partages",
+    "menu/events":"Évenements",
+    "menu/summaries":"Résumés",
+    "menu/notifications":"Notifications",
+    "menu/highlights":"Points forts",
+    "menu/history":"Histoire",
+    "menu/logout":"Quittez",
+    "menu/verse":"Verset du jour",
+
+
+    "highlights_title":"Points forts"
+
+
+    
+    
+
+
+    
+
+    
+}
