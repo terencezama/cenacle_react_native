@@ -10,6 +10,7 @@
     "android:reload": "adb shell input text \"RR\""
   },
   "dependencies": {
+    "apisauce": "^1.0.2",
     "formik": "^1.4.1",
     "i18n-js": "^3.1.0",
     "moment-es6": "^1.0.0",

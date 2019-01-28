@@ -47,3 +47,5 @@ export const EVENTS = "EVENTS";
 export const SHARES = "SHARES";
 export const SUMMARIES = "SUMMARIES";
 export const BIBLE_HIGHLIGHTS = "BIBLE_HIGHLIGHTS";
+
+export const YOUTUBE_VIDEOS = "YOUTUBE_VIDEOS";

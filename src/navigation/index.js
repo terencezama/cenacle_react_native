@@ -1,16 +1,18 @@
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import { WelcomeScreen, ForgotScreen, LoginScreen, RegisterScreen, SharesScreen, EventsScreen, SummariesScreen, BibleScreen } from '../containers';
+import { WelcomeScreen, ForgotScreen, LoginScreen, RegisterScreen, SharesScreen, EventsScreen, SummariesScreen, BibleScreen, PlaylistScreen } from '../containers';
 import theme from '../theme'
 import { BibleBookView, BibleChapterView, BibleHighlightsScreen } from '../containers/core/bible';
 import { DrawerComponent } from '../components';
 import {Easing,Animated} from 'react-native'
+
 
 const coreScreens = {
     SharesScreen: { screen: SharesScreen },
     EventsScreen: { screen: EventsScreen },
     SummariesScreen: { screen: SummariesScreen },
     BibleScreen: { screen: BibleScreen },
-    BibleHighlightsScreen : {screen:BibleHighlightsScreen}
+    BibleHighlightsScreen : {screen:BibleHighlightsScreen},
+    PlaylistScreen: {screen:PlaylistScreen}
 }
 
 const RootStack = createStackNavigator({

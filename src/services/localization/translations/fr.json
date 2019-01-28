@@ -60,9 +60,12 @@
     "menu/history":"Histoire",
     "menu/logout":"Quittez",
     "menu/verse":"Verset du jour",
+    "menu/playlist":"Playlist",
 
 
-    "highlights_title":"Points forts"
+    "highlights_title":"Points forts",
+
+    "playlist_title":"Playlist"
 
 
     

@@ -25,6 +25,7 @@ target 'Cenacle' do
 
     pod 'react-native-track-player', :path => '../node_modules/react-native-track-player'
 
+
   end
 
   target 'CenacleTests' do

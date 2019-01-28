@@ -7,6 +7,7 @@ import { request } from './types';
 import {eventsSagas} from './events/sagas'
 import { sharesSagas } from './shares/sagas';
 import { summariesSagas } from './summaries/sagas';
+import {playlistVideos} from './youtube/sagas'
 export default function * root () {
     yield all([
 
@@ -30,7 +31,9 @@ export default function * root () {
       takeLatest(request(Types.EVENTS),eventsSagas),
       takeLatest(request(Types.SHARES),sharesSagas),
       takeLatest(request(Types.SUMMARIES),summariesSagas),
-      takeLatest(request(Types.BIBLE_HIGHLIGHTS),fetchBibleHighlights)
+      takeLatest(request(Types.BIBLE_HIGHLIGHTS),fetchBibleHighlights),
+
+      takeLatest(request(Types.YOUTUBE_VIDEOS),playlistVideos)
 
 
     ])

@@ -33,6 +33,7 @@ const CustomDrawerContentComponent = (props) => {
                             { icon: 'share', value: i18n.t('menu/shares'), onPress:()=>this._navigate('SharesScreen')  },
                             { icon: 'event', value: i18n.t('menu/events'), onPress:()=>this._navigate('EventsScreen') },
                             { icon: 'history', value: i18n.t('menu/summaries'), onPress:()=>this._navigate('SummariesScreen') },
+                            { icon: 'video-library', value: i18n.t('menu/playlist'), onPress:()=>this._navigate('PlaylistScreen') },
                             
                         ]}
                     />
