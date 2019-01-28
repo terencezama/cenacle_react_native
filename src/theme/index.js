@@ -6,6 +6,7 @@ const uiTheme = {
       darkTextColor:COLOR.red100,
       textColor: 'black',
       backgroundColor:COLOR.grey50,
+      linkColor:COLOR.indigo500,
       iconSize:20,
       screen:{
           flex:1,
