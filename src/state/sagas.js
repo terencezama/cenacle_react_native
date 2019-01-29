@@ -1,6 +1,6 @@
 import { takeLatest, all, take } from 'redux-saga/effects'
 import { Types } from '.';
-import { bibleDbFileCheck, fetchBibleBooks, setChapter, nextChapter, prevChapter, highlightVerses, unhighlightVerses, fetchBibleHighlights, unhighlightVersesId} from './bible/sagas'
+import { bibleDbFileCheck, fetchBibleBooks, setChapter, nextChapter, prevChapter, highlightVerses, unhighlightVerses, fetchBibleHighlights, unhighlightVersesId, fetchRandomChapter} from './bible/sagas'
 import {welcomeTextSagas} from './welcome/sagas'
 import {checkUserLoggedIn, loginUser,registerUser,forgotPassword, logoutUser} from './auth/sagas';
 import { request } from './types';
@@ -34,7 +34,8 @@ export default function * root () {
       takeLatest(request(Types.SUMMARIES),summariesSagas),
       takeLatest(request(Types.BIBLE_HIGHLIGHTS),fetchBibleHighlights),
 
-      takeLatest(request(Types.YOUTUBE_VIDEOS),playlistVideos)
+      takeLatest(request(Types.YOUTUBE_VIDEOS),playlistVideos),
+      takeLatest(request(Types.BIBLE_CHAPTER_HAZARD),fetchRandomChapter)
 
 
     ])

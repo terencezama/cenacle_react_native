@@ -9,6 +9,7 @@ import EventsScreen from './core/events';
 import SummariesScreen from './core/summaries';
 import BibleScreen from './core/bible';
 import PlaylistScreen from './core/playlist';
+import HazardScreen from './core/hazard';
 
 export {
     WelcomeScreen,
@@ -20,5 +21,6 @@ export {
     EventsScreen,
     SummariesScreen,
     BibleScreen,
-    PlaylistScreen
+    PlaylistScreen,
+    HazardScreen
 }

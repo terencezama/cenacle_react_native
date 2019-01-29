@@ -61,11 +61,15 @@
     "menu/logout":"Quittez",
     "menu/verse":"Verset du jour",
     "menu/playlist":"Playlist",
+    "menu/hazard":"Chapitre Au Hazard",
 
 
     "highlights_title":"Points forts",
 
-    "playlist_title":"Playlist"
+    "playlist_title":"Playlist",
+    "hazard_title":"Chapitre Au Hazard",
+    "hazard_ask":"Demande à Jesus notre Seigneur de guider en te montrant la parole, puis clique sur le boutton à ta droite.",
+    "hazard_continue":"Ouvrir dans la Bible."
 
 
     

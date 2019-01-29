@@ -1,5 +1,5 @@
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import { WelcomeScreen, ForgotScreen, LoginScreen, RegisterScreen, SharesScreen, EventsScreen, SummariesScreen, BibleScreen, PlaylistScreen } from '../containers';
+import { WelcomeScreen, ForgotScreen, LoginScreen, RegisterScreen, SharesScreen, EventsScreen, SummariesScreen, BibleScreen, PlaylistScreen, HazardScreen } from '../containers';
 import theme from '../theme'
 import { BibleBookView, BibleChapterView, BibleHighlightsScreen } from '../containers/core/bible';
 import { DrawerComponent } from '../components';
@@ -12,7 +12,8 @@ const coreScreens = {
     SummariesScreen: { screen: SummariesScreen },
     BibleScreen: { screen: BibleScreen },
     BibleHighlightsScreen : {screen:BibleHighlightsScreen},
-    PlaylistScreen: {screen:PlaylistScreen}
+    PlaylistScreen: {screen:PlaylistScreen},
+    HazardScreen: {screen:HazardScreen}
 }
 
 const RootStack = createStackNavigator({

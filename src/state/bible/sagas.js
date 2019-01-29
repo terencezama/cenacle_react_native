@@ -371,3 +371,28 @@ export function* fetchBibleHighlights(action) {
     }
 }
 
+export function* fetchRandomChapter(action){
+    const ord = Math.floor((Math.random() * 66) + 1);
+    const realm = yield Realm.open({ path, schema });
+    let results = yield realm.objects('Book').filtered(`ord = "${ord}"`)
+    const book = results[0];
+    const {chaptersCount,id} = book;
+
+    const bookId = id;
+    let chapter = Math.floor((Math.random() * chaptersCount) + 1);
+    
+    const chapterId = `${bookId}.${chapter}`;
+    try {
+        const realm = yield Realm.open({ path, schema });
+        let results = yield realm.objects('Verse').filtered(`chapterId = "${chapterId}"`).sorted('ord')
+        // console.log(results);
+        yield put(performAction({
+            book,
+            verses:results,
+            chapter
+        }, update(Types.BIBLE_CHAPTER_HAZARD)))
+
+    } catch (e) {
+        console.log('realm error hazard', e);
+    }
+}

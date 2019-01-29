@@ -5,7 +5,11 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		001218AD220072DD00A92F7B /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
+		001218AE220072DD00A92F7B /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
+		001218AF220072DD00A92F7B /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
 		001C39C221EDD12F00E79EBA /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001C399321EDD12F00E79EBA /* EventKit.framework */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -28,6 +32,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		187DDF42417F449887FBBD74 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
 		1C4BF8ED4D5743DA87D21D8A /* libRNLanguages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFA9B16BFD0455AAA5AC7BC /* libRNLanguages.a */; };
 		1C94871540C4437890C8A569 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D847B2FFE044472EA7BEDE45 /* AntDesign.ttf */; };
 		1D74EEC44D3749A596E40DC1 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D311D7D765946F782EE0656 /* Octicons.ttf */; };
@@ -70,7 +75,6 @@
 		EB7D34AB855F4F078D69826A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 719F0C03A61F4FE89879681F /* libz.tbd */; };
 		F2E6911472D34409822BE32A /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 662E8C2620E54575B3F3777B /* libRNFirebase.a */; };
 		F912A6D1D0C14AA8AAD63C2C /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A55EC31A1CB4975B3596397 /* FontAwesome5_Brands.ttf */; };
-		187DDF42417F449887FBBD74 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -450,6 +454,7 @@
 		1BFA9B16BFD0455AAA5AC7BC /* libRNLanguages.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNLanguages.a; sourceTree = "<group>"; };
 		1D311D7D765946F782EE0656 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		1F39FC37E01446F08A79F870 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; path = RNPlaceholder.swift; sourceTree = "<group>"; };
 		292D010D071A86CF07FDAF89 /* libPods-CenacleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CenacleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* Cenacle-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cenacle-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Cenacle-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cenacle-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -493,7 +498,6 @@
 		E8A7A43C596EB24654495BBE /* libPods-Cenacle-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cenacle-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F307FB1156AE98FE83BEFF22 /* Pods-CenacleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CenacleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CenacleTests/Pods-CenacleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB8C52D75EB942618AD4C7B1 /* libRNLanguages-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNLanguages-tvOS.a"; sourceTree = "<group>"; };
-		20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */ = {isa = PBXFileReference; name = "RNPlaceholder.swift"; path = "RNPlaceholder.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -585,6 +589,7 @@
 				2EC84DB422EF4315A76A19C2 /* libRNVectorIcons-tvOS.a */,
 				662E8C2620E54575B3F3777B /* libRNFirebase.a */,
 				69C5F2059285403280E67DCF /* libRealmReact.a */,
+				20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -1639,7 +1644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* CenacleTests.m in Sources */,
-				187DDF42417F449887FBBD74 /* RNPlaceholder.swift in Sources */,
+				001218AD220072DD00A92F7B /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1659,7 +1664,7 @@
 			files = (
 				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
 				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
-				187DDF42417F449887FBBD74 /* RNPlaceholder.swift in Sources */,
+				001218AE220072DD00A92F7B /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,7 +1673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCD954D1E0B4F2C00145EB5 /* CenacleTests.m in Sources */,
-				187DDF42417F449887FBBD74 /* RNPlaceholder.swift in Sources */,
+				001218AF220072DD00A92F7B /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1721,17 +1726,15 @@
 				INFOPLIST_FILE = CenacleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cenacle.app/Cenacle";
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cenacle.app/Cenacle";
 			};
 			name = Debug;
 		};
@@ -1753,17 +1756,15 @@
 				INFOPLIST_FILE = CenacleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cenacle.app/Cenacle";
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cenacle.app/Cenacle";
 			};
 			name = Release;
 		};
@@ -1800,8 +1801,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.terence.cenacle;
 				PRODUCT_NAME = Cenacle;
-				VERSIONING_SYSTEM = "apple-generic";
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1837,8 +1838,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.terence.cenacle;
 				PRODUCT_NAME = Cenacle;
-				VERSIONING_SYSTEM = "apple-generic";
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1866,9 +1867,7 @@
 				);
 				INFOPLIST_FILE = "Cenacle-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1876,9 +1875,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.terence.cenacle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1906,9 +1905,7 @@
 				);
 				INFOPLIST_FILE = "Cenacle-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1916,9 +1913,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.terence.cenacle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1944,9 +1941,7 @@
 				);
 				INFOPLIST_FILE = "Cenacle-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1954,9 +1949,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Cenacle-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cenacle-tvOS.app/Cenacle-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1982,9 +1977,7 @@
 				);
 				INFOPLIST_FILE = "Cenacle-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1992,9 +1985,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Cenacle-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cenacle-tvOS.app/Cenacle-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -2094,8 +2087,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
 				SWIFT_VERSION = 4.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};

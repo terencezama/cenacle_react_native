@@ -67,7 +67,7 @@ class StreamingScreen extends Component {
 
     componentDidUpdate = (prevProps, prevState) => {
         const { ui } = this.props;
-        if (prevProps.ui != ui) {
+        if (prevProps.ui != ui && ui.bible_current_book) {
             console.log('current_book', ui.bible_current_book);
             const { version, name, ord, chapter, chaptersCount } = ui.bible_current_book;
             /*
