@@ -139,7 +139,7 @@ class BiblePageView extends Component {
             } else if (data.action === "underline") {
               this.props.setBibleUnderline([...underline, data])
             } else if (data.action == "unhighlight") {
-              RNBibleRealm.unhighlight({ verseId: data.verse });
+              // RNBibleRealm.unhighlight({ verseId: data.verse });
             }
 
 

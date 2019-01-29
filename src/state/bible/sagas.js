@@ -185,7 +185,7 @@ export function* _realmHighlightVerses(verses, title) {
                             verseIndex,
                             title,
                             data
-                        })
+                        },true)
                     }
                     resolve(1);
                 })
@@ -225,6 +225,29 @@ export function* _realmUnHighlightVerses(verses) {
     });
 }
 
+export function* _realmUnHighlightVersesIds(verses){
+    yield new Promise((resolve, reject) => {
+        Realm.open({ path, schema }).then(realm => {
+            try {
+                realm.write(() => {
+                    const versesLength = verses.length;
+                    for (let i = 0; i < versesLength; i++) {
+                        const verseId = verses[i];
+                        // realm.delete(verse);
+                        realm.delete(realm.objectForPrimaryKey('Highlight',verseId))
+                    }
+                    resolve(1);
+                })
+            } catch (e) {
+                console.log(e);
+                reject(e);
+            }
+        }).catch(e => {
+            console.log(e);
+            reject(e)
+        })
+    });
+}
 export function* highlightVerses(action) {
     const { payload: { verses } } = action;
     console.log('highlightVerses', action);
@@ -239,6 +262,23 @@ export function* unhighlightVerses(action) {
     const { payload } = action;
     // alert(JSON.stringify(action));
     yield _realmUnHighlightVerses(payload).next();
+
+    yield put(performAction({}, request(Types.BIBLE_HIGHLIGHTS)))
+
+
+    const ui = yield select(getUi);
+    const bookId = ui.bible_current_book.id;
+    const chapter = ui.bible_current_book.chapter;
+    yield put(performAction({
+        bookId,
+        chapter
+    }, request(Types.BIBLE_CHAPTER)))
+}
+
+export function* unhighlightVersesId(action){
+    const { payload } = action;
+    // alert(JSON.stringify(action));
+    yield _realmUnHighlightVersesIds(payload).next();
 
     yield put(performAction({}, request(Types.BIBLE_HIGHLIGHTS)))
 
