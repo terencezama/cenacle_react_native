@@ -8,7 +8,7 @@ import { eventChannel, END } from 'redux-saga';
 
 function _fetchEvents() {
     return eventChannel(emitter => {
-        const ref = firebase.firestore().collection('cenacle').doc(Config.env).collection('events').orderBy('date', 'asc')
+        const ref = firebase.firestore().collection('cenacle').doc(Config.env).collection('events').orderBy('jsdate', 'desc')
         const subscriber = ref.onSnapshot(querySnapshot => {
             let events = [];
             querySnapshot.forEach((doc) => {

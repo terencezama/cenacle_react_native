@@ -82,7 +82,7 @@ class PlaylistScreen extends Component {
         const { refreshing, data } = this.state;
         const { playlist } = this.props;
         return (
-            <Screen loading={playlist.fetching}>
+            <Screen loading={false}>
                 <FlatList
                     extraData={this.state}
                     data={data}

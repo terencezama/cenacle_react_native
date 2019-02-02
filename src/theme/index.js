@@ -3,6 +3,7 @@ import { TextField } from 'react-native-material-textfield'
 const uiTheme = {
     palette: {
       primaryColor: COLOR.red500,
+      darkPrimary: COLOR.red900,
       darkTextColor:COLOR.red100,
       textColor: 'black',
       backgroundColor:COLOR.grey50,

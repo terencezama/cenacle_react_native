@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end', 
         marginRight:8, 
         justifyContent:'center', 
-        padding: 8,
+        padding: 4,
         borderRadius: 4,
     }
 });

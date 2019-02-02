@@ -9,11 +9,11 @@ import android.support.v4.app.ActivityCompat;
 import com.brentvatne.react.ReactVideoPackage;
 import com.facebook.react.ReactApplication;
 import com.guichaguri.trackplayer.TrackPlayer;
-import com.calendarevents.CalendarEventsPackage;
 
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
+import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import io.invertase.firebase.storage.RNFirebaseStoragePackage;
 import io.realm.react.RealmReactPackage;
 
@@ -48,7 +48,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
               new MainReactPackage(),
             new TrackPlayer(),
-              new CalendarEventsPackage(),
               new RealmReactPackage(),
               new RNFSPackage(),
               new RNFirebasePackage(),
@@ -56,6 +55,7 @@ public class MainApplication extends Application implements ReactApplication {
               new RNFirebaseAuthPackage(),
               new RNFirebaseFirestorePackage(),
               new RNFirebaseStoragePackage(),
+              new RNFirebaseNotificationsPackage(),
               new VectorIconsPackage(),
               new RNLanguagesPackage(),
               new RNGestureHandlerPackage(),
