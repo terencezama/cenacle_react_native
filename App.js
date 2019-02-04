@@ -42,18 +42,19 @@ export default class App extends React.Component {
     const {data} = notification;
     switch (data.tag) {
       case 'event':{
+        NavigationService.navigate('EventsScreen');
         break;
       }
       case 'share':{
-
+        NavigationService.navigate('SharesScreen');
         break;
       }
       case 'summary':{
-
+        NavigationService.navigate('SummariesScreen');
         break;
       }
       case 'verse':{
-
+        NavigationService.navigate('WelcomeScreen');
         break;
       }
       default:
