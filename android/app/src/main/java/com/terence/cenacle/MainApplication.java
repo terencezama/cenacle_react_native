@@ -13,6 +13,7 @@ import com.guichaguri.trackplayer.TrackPlayer;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import io.invertase.firebase.storage.RNFirebaseStoragePackage;
 import io.realm.react.RealmReactPackage;
@@ -59,7 +60,8 @@ public class MainApplication extends Application implements ReactApplication {
               new VectorIconsPackage(),
               new RNLanguagesPackage(),
               new RNGestureHandlerPackage(),
-              new ReactVideoPackage()
+              new ReactVideoPackage(),
+              new RNFirebaseMessagingPackage()
       );
     }
 

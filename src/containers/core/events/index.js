@@ -62,7 +62,7 @@ class EventsScreen extends Component {
             .setTitle(event.title)
             .setBody(`${event.desc} ${time}`)
             .setData(event)
-            .android.setChannelId('cenacle_notification');
+            .android.setChannelId('cenacle');
         let date = new Date(jsdate.getTime());
         date.setHours(6);
         console.log('event date',date,jsdate);
