@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>518913624530-0qomq5k83kfraqf1h9ln5gs0ar1vni1d.apps.googleusercontent.com</string>
+	<string>518913624530-468fs46kkd7sr0ue61b39t0v3b90d73i.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.518913624530-0qomq5k83kfraqf1h9ln5gs0ar1vni1d</string>
+	<string>com.googleusercontent.apps.518913624530-468fs46kkd7sr0ue61b39t0v3b90d73i</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD-io_Tq6ERI6Ews0TP7ql2seD9TDTWbT8</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.terence.cenacle</string>
+	<string>com.terencez.cenacle</string>
 	<key>PROJECT_ID</key>
 	<string>terence-838bd</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:518913624530:ios:e2758114ec4d6c0d</string>
+	<string>1:518913624530:ios:85b2a16b62dc4e6f</string>
 	<key>DATABASE_URL</key>
 	<string>https://terence-838bd.firebaseio.com</string>
 </dict>
