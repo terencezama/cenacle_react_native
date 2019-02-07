@@ -3,7 +3,10 @@ package com.terence.cenacle;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Application;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 import android.support.v4.app.ActivityCompat;
 
 import com.brentvatne.react.ReactVideoPackage;
@@ -34,7 +37,7 @@ import com.terence.cenacle.BuildConfig;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends MultiDexApplication implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -80,5 +83,10 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+  }
+  @Override
+  protected void attachBaseContext(Context context) {
+    super.attachBaseContext(context);
+    MultiDex.install(this);
   }
 }

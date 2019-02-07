@@ -8,9 +8,10 @@ import { connect } from 'react-redux';
 import { performAction, Types } from '../../../state';
 import { request } from '../../../state/types';
 import uiTheme from '../../../theme';
-import { OpenMap, OpenDate } from '../../../lib';
+// import { OpenMap, OpenDate } from '../../../lib';
 import moment from 'moment-with-locales-es6';
 import firebase from 'react-native-firebase';
+import { showLocation } from 'react-native-map-link';
 
 // import RNCalendarEvents from 'react-native-calendar-events'
 
@@ -44,12 +45,12 @@ class EventsScreen extends Component {
     }
     _findLocation = (location) => {
         // alert(location);
-        const loc = location.split(', ');
-        OpenMap({
+
+        const loc = location.replace(' ','').split(',');
+        showLocation({
             latitude: loc[0],
             longitude: loc[1],
-            zoomLevel: 5,
-            name: i18n.t('events_title')
+            googleForceLatLon: true,  // optionally force GoogleMaps to use the latlon for the query instead of the title
         })
 
     }
@@ -79,10 +80,10 @@ class EventsScreen extends Component {
             <View>
                 <View style={styles.root}>
                     <View style={[styles.dateContainer, { backgroundColor: jsdate<= this.now ? gray:color }]}>
-                        <Text style={[material.display3, styles.text, {
+                        <Text style={[material.display2, styles.text, {
                             // fontWeight:'100'
                         }]}>{moment(date).format('DD')}</Text>
-                        <Text style={[material.display1, styles.text, {
+                        <Text style={[material.headline, styles.text, {
                             fontWeight: 'bold',
                             transform: [{
                                 scaleY: 0.9
