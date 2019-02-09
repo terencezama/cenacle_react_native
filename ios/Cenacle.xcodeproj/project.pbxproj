@@ -31,7 +31,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		157E524FC9A2B688D88A7B46 /* Pods_CenacleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDCF7CAA3AB0CB31E7F983F /* Pods_CenacleTests.framework */; };
 		187DDF42417F449887FBBD74 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
 		1C4BF8ED4D5743DA87D21D8A /* libRNLanguages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFA9B16BFD0455AAA5AC7BC /* libRNLanguages.a */; };
 		1C94871540C4437890C8A569 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D847B2FFE044472EA7BEDE45 /* AntDesign.ttf */; };
@@ -50,19 +49,20 @@
 		2DBC2E6FE2674234BBA9851A /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F39FC37E01446F08A79F870 /* Feather.ttf */; };
 		2DCD954D1E0B4F2C00145EB5 /* CenacleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CenacleTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-		33A983E7D3F3862D4BEF8BAF /* Pods_Cenacle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE477797656D30F0A37D051 /* Pods_Cenacle.framework */; };
 		361CCC054DCC4DCCA029179A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EA53075628D491E8B7F1CD3 /* SimpleLineIcons.ttf */; };
 		40B1E0578D07EF7B995EA289 /* libPods-Cenacle-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBF9FD94AB2810C7EBD3AB /* libPods-Cenacle-tvOS.a */; };
 		47A4F9662DA740D29744D783 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3878EFA508A4EB4864D01D1 /* Entypo.ttf */; };
 		4B41FCD2169F4277906B4488 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C83CF80B2ABE46F591DB7D95 /* libRNGestureHandler.a */; };
 		5122989D9BF143539A44B744 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E456B4A34A3D4AF6B4720E2C /* MaterialCommunityIcons.ttf */; };
 		56BBEA17BD804B898A363208 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88DDB94B68004FEDAF8DC8A5 /* FontAwesome.ttf */; };
+		572238D152D152BFC6331D05 /* libPods-CenacleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7C2951CC5AD4E179122651 /* libPods-CenacleTests.a */; };
 		5F1B8006D33643219EECFF7A /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0493DC3087E4C758DEA7373 /* FontAwesome5_Regular.ttf */; };
 		5F8700D1524740D8AAA51AFF /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61D7383B74D44430BEA18CED /* Foundation.ttf */; };
 		606C85BD9D334F00B1353820 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DACE3FA18CFA4B2FBEC9417C /* Zocial.ttf */; };
+		6A168713737D36EC07929EA8 /* libPods-Cenacle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8558F048FC6BF47388DEB1FD /* libPods-Cenacle.a */; };
 		7444FB85E85449B0B254DF80 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 77905B9641D14F3BA9FA91A9 /* libc++.tbd */; };
 		76C211D0DEFF41038B200CA0 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C5F2059285403280E67DCF /* libRealmReact.a */; };
-		7D274B891BDD705F25E424F7 /* Pods_Cenacle_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9BA2A5B71E039DA24C284D /* Pods_Cenacle_tvOSTests.framework */; };
+		7FC5705348100FF22ACC1746 /* libPods-Cenacle-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B5FC24EFCDF48041F61DF /* libPods-Cenacle-tvOSTests.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8DDDC76371444A5C8DCAC2FA /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CAA4C3A7B45BCBD19284F /* EvilIcons.ttf */; };
 		958F5F6063B943A992D38065 /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EC84DB422EF4315A76A19C2 /* libRNVectorIcons-tvOS.a */; };
@@ -451,7 +451,6 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Cenacle/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		157F33AD2DCA1FA588EDC582 /* Pods-Cenacle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cenacle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cenacle/Pods-Cenacle.debug.xcconfig"; sourceTree = "<group>"; };
-		1BE477797656D30F0A37D051 /* Pods_Cenacle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cenacle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFA9B16BFD0455AAA5AC7BC /* libRNLanguages.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNLanguages.a; sourceTree = "<group>"; };
 		1D311D7D765946F782EE0656 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		1F39FC37E01446F08A79F870 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -462,7 +461,9 @@
 		2EC84DB422EF4315A76A19C2 /* libRNVectorIcons-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNVectorIcons-tvOS.a"; sourceTree = "<group>"; };
 		30A278BA35C401B786A25CAE /* Pods-Cenacle-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cenacle-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cenacle-tvOSTests/Pods-Cenacle-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A55EC31A1CB4975B3596397 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		3C7C2951CC5AD4E179122651 /* libPods-CenacleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CenacleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35D091553E4A01BC717CEE /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		545B5FC24EFCDF48041F61DF /* libPods-Cenacle-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cenacle-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55999D30E88BE91DD0CC7286 /* Pods-Cenacle-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cenacle-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cenacle-tvOS/Pods-Cenacle-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		588B681ED5A947B2A7591691 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -479,14 +480,13 @@
 		808292394FE1445392AAF779 /* RNLanguages.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNLanguages.xcodeproj; path = "../node_modules/react-native-languages/ios/RNLanguages.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		836576339F7EC95FFC600658 /* Pods-Cenacle-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cenacle-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cenacle-tvOS/Pods-Cenacle-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8558F048FC6BF47388DEB1FD /* libPods-Cenacle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cenacle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DDB94B68004FEDAF8DC8A5 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		8BB805EAE5EF41B4842813E2 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
-		8CDCF7CAA3AB0CB31E7F983F /* Pods_CenacleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CenacleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		929699D7AEB870C2619DF331 /* Pods-CenacleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CenacleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CenacleTests/Pods-CenacleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B3E12439090401494E9A427 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		A3878EFA508A4EB4864D01D1 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		A6AF592523B5484594695FDD /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		AA9BA2A5B71E039DA24C284D /* Pods_Cenacle_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cenacle_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		BDF38F1ACDADF33F925A2D23 /* Pods-Cenacle-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cenacle-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cenacle-tvOSTests/Pods-Cenacle-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		C83CF80B2ABE46F591DB7D95 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
@@ -506,7 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				157E524FC9A2B688D88A7B46 /* Pods_CenacleTests.framework in Frameworks */,
+				572238D152D152BFC6331D05 /* libPods-CenacleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +537,7 @@
 				76C211D0DEFF41038B200CA0 /* libRealmReact.a in Frameworks */,
 				7444FB85E85449B0B254DF80 /* libc++.tbd in Frameworks */,
 				EB7D34AB855F4F078D69826A /* libz.tbd in Frameworks */,
-				33A983E7D3F3862D4BEF8BAF /* Pods_Cenacle.framework in Frameworks */,
+				6A168713737D36EC07929EA8 /* libPods-Cenacle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */,
-				7D274B891BDD705F25E424F7 /* Pods_Cenacle_tvOSTests.framework in Frameworks */,
+				7FC5705348100FF22ACC1746 /* libPods-Cenacle-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,9 +794,9 @@
 				D5EBF9FD94AB2810C7EBD3AB /* libPods-Cenacle-tvOS.a */,
 				77905B9641D14F3BA9FA91A9 /* libc++.tbd */,
 				719F0C03A61F4FE89879681F /* libz.tbd */,
-				1BE477797656D30F0A37D051 /* Pods_Cenacle.framework */,
-				AA9BA2A5B71E039DA24C284D /* Pods_Cenacle_tvOSTests.framework */,
-				8CDCF7CAA3AB0CB31E7F983F /* Pods_CenacleTests.framework */,
+				8558F048FC6BF47388DEB1FD /* libPods-Cenacle.a */,
+				545B5FC24EFCDF48041F61DF /* libPods-Cenacle-tvOSTests.a */,
+				3C7C2951CC5AD4E179122651 /* libPods-CenacleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -937,7 +937,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				FF42403038F69FBE0BB8E5B2 /* [CP] Embed Pods Frameworks */,
 				2DD9A52862477795641DFA62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -998,13 +997,15 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = XXC8J7FE9N;
+						DevelopmentTeam = 7JVBDDYG98;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 7JVBDDYG98;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1640,42 +1641,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF42403038F69FBE0BB8E5B2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Cenacle/Pods-Cenacle-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cenacle/Pods-Cenacle-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1750,7 +1715,7 @@
 			baseConfigurationReference = F307FB1156AE98FE83BEFF22 /* Pods-CenacleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = XXC8J7FE9N;
+				DEVELOPMENT_TEAM = 7JVBDDYG98;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1784,7 +1749,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = XXC8J7FE9N;
+				DEVELOPMENT_TEAM = 7JVBDDYG98;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1813,10 +1778,13 @@
 			baseConfigurationReference = 157F33AD2DCA1FA588EDC582 /* Pods-Cenacle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_ENTITLEMENTS = Cenacle/Cenacle.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7JVBDDYG98;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Firebase/Firestore",
@@ -1840,8 +1808,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.terence.cenacle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terencez.cenacle;
 				PRODUCT_NAME = Cenacle;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1852,8 +1821,11 @@
 			baseConfigurationReference = 7397ADD56E237E697E3640C4 /* Pods-Cenacle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cenacle/Cenacle.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7JVBDDYG98;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Firebase/Firestore",
@@ -1877,8 +1849,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.terence.cenacle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terencez.cenacle;
 				PRODUCT_NAME = Cenacle;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
