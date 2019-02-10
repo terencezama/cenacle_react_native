@@ -13,7 +13,9 @@ target 'Cenacle' do
   pod 'Firebase/Firestore', '~> 5.15.0'
   pod 'Firebase/Auth', '~> 5.15.0'
   pod 'Firebase/Messaging', '~> 5.15.0'
-  
+  pod 'StreamingKit', '~> 0.1'
+#  pod 'RNAudioStreaming', :path => '../node_modules/react-native-audio-streaming'
+
 #  pod 'GoogleAppMeasurement', '~> 5.3.0'
   
 

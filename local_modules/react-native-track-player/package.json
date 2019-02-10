@@ -1,0 +1,70 @@
+{
+  "_from": "react-native-track-player",
+  "_id": "react-native-track-player@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-NR2rGmXZfArYTQD3/gCGvZc3c/u42I1RgSzr+ppQSAZhNscG/6bRu4TCNnE4XTnnbqXq/MjL0uUgJL5TvGFFAg==",
+  "_location": "/react-native-track-player",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-track-player",
+    "name": "react-native-track-player",
+    "escapedName": "react-native-track-player",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-track-player/-/react-native-track-player-1.1.1.tgz",
+  "_shasum": "f5d0f680265bcc98ec0b4f656d7ef6f487962d5c",
+  "_spec": "react-native-track-player",
+  "_where": "/Users/Terence/proj/cenacle_react_native",
+  "bugs": {
+    "url": "https://github.com/react-native-kit/react-native-track-player/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "David Chavez",
+      "email": "david@dcvz.io",
+      "url": "http://dcvz.io"
+    },
+    {
+      "name": "Guilherme Chaguri",
+      "email": "guichaguri@gmail.com",
+      "url": "http://guichaguri.com"
+    }
+  ],
+  "deprecated": false,
+  "description": "A fully fledged audio module created for music apps",
+  "homepage": "https://github.com/react-native-kit/react-native-track-player#readme",
+  "keywords": [
+    "react",
+    "react-native",
+    "track-player",
+    "audio-player",
+    "audio",
+    "player",
+    "music",
+    "controls",
+    "chromecast",
+    "android",
+    "ios",
+    "windows"
+  ],
+  "license": "Apache-2.0",
+  "name": "react-native-track-player",
+  "peerDependencies": {
+    "react-native": ">=0.57.0",
+    "react": ">=16.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-native-kit/react-native-track-player.git"
+  },
+  "version": "1.1.1"
+}

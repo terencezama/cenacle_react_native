@@ -118,6 +118,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - StreamingKit (0.1.30)
 
 DEPENDENCIES:
   - Firebase/Auth (~> 5.15.0)
@@ -125,6 +126,7 @@ DEPENDENCIES:
   - Firebase/Firestore (~> 5.15.0)
   - Firebase/Messaging (~> 5.15.0)
   - Firebase/Storage (~> 5.15.0)
+  - StreamingKit (~> 0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -147,6 +149,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - StreamingKit
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
@@ -168,7 +171,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  StreamingKit: 70ca8608c206864b4d54a577eacb3c8bf7c72209
 
-PODFILE CHECKSUM: 1ef8392190d81469c4236189c919f2f89b084c61
+PODFILE CHECKSUM: 638909a2ed1258944aae91c080b9ed7b303810c0
 
 COCOAPODS: 1.5.3
