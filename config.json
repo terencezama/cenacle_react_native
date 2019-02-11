@@ -1,5 +1,5 @@
 {
-    "env":"qa",
+    "env":"prod",
     "firestore":{
         "persistence":true
     },
