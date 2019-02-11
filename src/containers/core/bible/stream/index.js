@@ -78,10 +78,9 @@ class StreamingScreen extends Component {
       async data => {
         let nstate = { trackState: data.state }
         
-        if(data.state === TrackPlayer.STATE_NONE || 
-          data.state === TrackPlayer.STATE_PAUSED ||
-          data.state === TrackPlayer.STATE_STOPPED){
-            nstate.isPlaying = false;
+        if(data.state === TrackPlayer.STATE_PLAYING ||
+          data.state === TrackPlayer.STATE_BUFFERING){
+            nstate.isPlaying = true;
           }
           this.setState(nstate);
       }
@@ -150,6 +149,7 @@ class StreamingScreen extends Component {
         track
       });
 
+      console.log('this.state.isPlaying',this.state.isPlaying);
       if (this.state.isPlaying) {
         this._addAndPlayTrack();
       } else {

@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
   [FIRApp configure];
   [RNFirebaseNotifications configure];
   NSURL *jsCodeLocation;

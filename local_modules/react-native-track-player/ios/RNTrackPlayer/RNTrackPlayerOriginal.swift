@@ -10,11 +10,9 @@ import Foundation
 import MediaPlayer
 
 @objc(RNTrackPlayer)
-public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
-    
-    var tracks = [Track]()
-    private lazy var player: STKAudioPlayer = {
-        let player = STKAudioPlayer()
+public class RNTrackPlayer: RCTEventEmitter, AudioPlayerDelegate {
+    private lazy var player: QueuedAudioPlayer = {
+        let player = QueuedAudioPlayer()
         player.delegate = self
         
         return player
@@ -22,77 +20,44 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     
     
     // MARK: - AudioPlayerDelegate
-    public func audioPlayer(_ audioPlayer: STKAudioPlayer, didStartPlayingQueueItemId queueItemId: NSObject) {
-        let track = queueItemId as! Track
-        var info = [String: Any]()
-        info[MPMediaItemPropertyArtist] = track.artist
-        info[MPMediaItemPropertyPlaybackDuration] = track.duration
-        info[MPMediaItemPropertyTitle] = track.title
-        info[MPMediaItemPropertyArtwork] = track.artwork
-        
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+    
+    public func audioPlayer(playerDidChangeState state: AudioPlayerState) {
+        guard !isTesting else { return }
+        sendEvent(withName: "playback-state", body: ["state": player.playerState.rawValue])
     }
     
-    public func audioPlayer(_ audioPlayer: STKAudioPlayer, didFinishBufferingSourceWithQueueItemId queueItemId: NSObject) {
-        
-    }
-    
-    public func audioPlayer(_ audioPlayer: STKAudioPlayer, stateChanged state: STKAudioPlayerState, previousState: STKAudioPlayerState) {
-        var avstate:AVPlayerWrapperState = .idle;
-        switch state {
-        case .buffering:
-            avstate = .loading
-        case .playing, .running:
-            avstate = .playing
-        case .paused:
-            avstate = .paused
-        case .stopped,.error,.disposed:
-            avstate = .idle
-        default:
-            avstate = .idle
-        }
-        sendEvent(withName: "playback-state", body: ["state": avstate.rawValue])
-    }
-    
-    public func audioPlayer(_ audioPlayer: STKAudioPlayer, didFinishPlayingQueueItemId queueItemId: NSObject, with stopReason: STKAudioPlayerStopReason, andProgress progress: Double, andDuration duration: Double) {
-        if stopReason == .eof && player.pendingQueueCount == 0 {
+    public func audioPlayer(itemPlaybackEndedWithReason reason: PlaybackEndedReason) {
+        if reason == .playedUntilEnd && player.nextItems.count == 0 {
             sendEvent(withName: "playback-queue-ended", body: nil)
-            print("next song>")
-        } else if stopReason == .eof{
-            let currentTrack = player.currentlyPlayingQueueItemId() as! Track
+        } else if reason == .playedUntilEnd {
             sendEvent(withName: "playback-track-changed", body: [
-                "track": currentTrack.id,
-                "position": player.progress,
-//                "nextTrack": (player.nextItems.first as? Track)?.id,
+                "track": (player.currentItem as? Track)?.id,
+                "position": player.currentTime,
+                "nextTrack": (player.nextItems.first as? Track)?.id,
                 ])
-            print("next song>>")
         }
     }
     
-    public func audioPlayer(_ audioPlayer: STKAudioPlayer, unexpectedError errorCode: STKAudioPlayerErrorCode) {
-        var error = ""
-        
-        switch errorCode {
-        case .none:
-            error = "Unknown"
-        case .dataSource:
-            error = "Datasource Error."
-        case .streamParseBytesFailed:
-            error = "Stream Parse Bytes Failed"
-        case .audioSystemError:
-            error = "Audio System Error"
-        case .codecError:
-            error = "Codec Error"
-        case .dataNotFound:
-            error = "Data Not Found"
-        case .other:
-            error = "Other Error"
-        default:
-            error = "Unknown"
-        }
-        sendEvent(withName: "playback-error", body: ["error": error])
+    public func audioPlayer(secondsElapsed seconds: Double) {}
+    
+    public func audioPlayer(failedWithError error: Error?) {
+        guard !isTesting else { return }
+        sendEvent(withName: "playback-error", body: ["error": error?.localizedDescription])
     }
     
+    public func audioPlayer(seekTo seconds: Int, didFinish: Bool) {}
+    
+    public func audioPlayer(didUpdateDuration duration: Double) {}
+    
+    private let isTesting = { () -> Bool in
+        if let _ = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] {
+            return true
+        } else if let testingEnv = ProcessInfo.processInfo.environment["DYLD_INSERT_LIBRARIES"] {
+            return testingEnv.contains("libXCTTargetBootstrapInject.dylib")
+        } else {
+            return false
+        }
+    }()
     
     
     // MARK: - Required Methods
@@ -154,6 +119,7 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
         ]
     }
     
+    
     // MARK: - Bridged Methods
     
     @objc(setupPlayer:resolver:rejecter:)
@@ -161,10 +127,6 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
-            DispatchQueue.main.async {
-                UIApplication.shared.beginReceivingRemoteControlEvents()
-            }
-            
         } catch {
             reject("setup_audio_session_failed", "Failed to setup audio session", error)
         }
@@ -182,7 +144,7 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
         let remoteCenter = MPRemoteCommandCenter.shared()
         let castedCapabilities = (options["capabilities"] as? [String])
         let supportedCapabilities = castedCapabilities?.filter { Capability(rawValue: $0) != nil }
-        let capabilities = supportedCapabilities?.compactMap { Capability(rawValue: $0) } ?? []
+        let capabilities = supportedCapabilities?.flatMap { Capability(rawValue: $0) } ?? []
         
         let enableStop = capabilities.contains(.stop)
         let enablePause = capabilities.contains(.pause)
@@ -214,10 +176,10 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     
     @objc(add:before:resolver:rejecter:)
     public func add(trackDicts: [[String: Any]], before trackId: String?, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-        
+        var tracks = [Track]()
         for trackDict in trackDicts {
             guard let track = Track(dictionary: trackDict) else {
-//                reject("invalid_track_object", "Track is missing a required key", nil)
+                reject("invalid_track_object", "Track is missing a required key", nil)
                 return
             }
             
@@ -227,15 +189,15 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
         print("Adding tracks:", tracks)
         
         if let trackId = trackId {
-//            guard let insertIndex = player.queueManager.items.firstIndex(where: { ($0 as! Track).id == trackId })
-//                else {
-//                    reject("track_not_in_queue", "Given track ID was not found in queue", nil)
-//                    return
-//            }
-//
-//            try? player.add(items: tracks, at: insertIndex)
+            guard let insertIndex = player.queueManager.items.firstIndex(where: { ($0 as! Track).id == trackId })
+                else {
+                    reject("track_not_in_queue", "Given track ID was not found in queue", nil)
+                    return
+            }
+            
+            try? player.add(items: tracks, at: insertIndex)
         } else {
-            if (player.pendingQueueCount == 0 && tracks.count > 0) {
+            if (player.currentItem == nil && tracks.count > 0) {
                 sendEvent(withName: "playback-track-changed", body: [
                     "track": nil,
                     "position": 0,
@@ -243,12 +205,7 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
                     ])
             }
             
-            for track in tracks{
-//                player.queue(track.url.value)
-                player.queue(track.url.value, withQueueItemId: track)
-                
-            }
-           
+            try? player.add(items: tracks)
         }
         
         resolve(NSNull())
@@ -257,84 +214,83 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     @objc(remove:resolver:rejecter:)
     public func remove(tracks ids: [String], resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         print("Removing tracks:", ids)
-//        var indexesToRemove: [Int] = []
-//
-//        for id in ids {
-//            if let index = player.queueManager.items.firstIndex(where: { ($0 as! Track).id == id }) {
-//                if index == player.queueManager.currentIndex { return }
-//                indexesToRemove.append(index)
-//            }
-//        }
-//
-//        for index in indexesToRemove {
-//            try? player.removeItem(at: index)
-//        }
+        var indexesToRemove: [Int] = []
+        
+        for id in ids {
+            if let index = player.queueManager.items.firstIndex(where: { ($0 as! Track).id == id }) {
+                if index == player.queueManager.currentIndex { return }
+                indexesToRemove.append(index)
+            }
+        }
+        
+        for index in indexesToRemove {
+            try? player.removeItem(at: index)
+        }
         
         resolve(NSNull())
     }
     
     @objc(removeUpcomingTracks:rejecter:)
     public func removeUpcomingTracks(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-//        print("Removing upcoming tracks")
-//        player.removeUpcomingItems()
+        print("Removing upcoming tracks")
+        player.removeUpcomingItems()
         resolve(NSNull())
     }
     
     @objc(skip:resolver:rejecter:)
     public func skip(to trackId: String, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-//        guard let trackIndex = player.queueManager.items.firstIndex(where: { ($0 as! Track).id == trackId })
-//            else {
-//                reject("track_not_in_queue", "Given track ID was not found in queue", nil)
-//                return
-//        }
-//
-//        sendEvent(withName: "playback-track-changed", body: [
-//            "track": (player.currentItem as? Track)?.id,
-//            "position": player.currentTime,
-//            "nextTrack": trackId,
-//            ])
-//
-//        print("Skipping to track:", trackId)
-//        try? player.jumpToItem(atIndex: trackIndex, playWhenReady: player.playerState == .playing)
+        guard let trackIndex = player.queueManager.items.firstIndex(where: { ($0 as! Track).id == trackId })
+            else {
+                reject("track_not_in_queue", "Given track ID was not found in queue", nil)
+                return
+        }
+        
+        sendEvent(withName: "playback-track-changed", body: [
+            "track": (player.currentItem as? Track)?.id,
+            "position": player.currentTime,
+            "nextTrack": trackId,
+            ])
+        
+        print("Skipping to track:", trackId)
+        try? player.jumpToItem(atIndex: trackIndex, playWhenReady: player.playerState == .playing)
         resolve(NSNull())
     }
     
     @objc(skipToNext:rejecter:)
     public func skipToNext(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-//        print("Skipping to next track")
-//        do {
-//            sendEvent(withName: "playback-track-changed", body: [
-//                "track": (player.currentItem as? Track)?.id,
-//                "position": player.currentTime,
-//                "nextTrack": (player.nextItems.first as? Track)?.id,
-//                ])
-//            try player.next()
-//            resolve(NSNull())
-//        } catch (_) {
-//            reject("queue_exhausted", "There is no tracks left to play", nil)
-//        }
+        print("Skipping to next track")
+        do {
+            sendEvent(withName: "playback-track-changed", body: [
+                "track": (player.currentItem as? Track)?.id,
+                "position": player.currentTime,
+                "nextTrack": (player.nextItems.first as? Track)?.id,
+                ])
+            try player.next()
+            resolve(NSNull())
+        } catch (_) {
+            reject("queue_exhausted", "There is no tracks left to play", nil)
+        }
     }
     
     @objc(skipToPrevious:rejecter:)
     public func skipToPrevious(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-//        print("Skipping to next track")
-//        do {
-//            sendEvent(withName: "playback-track-changed", body: [
-//                "track": (player.currentItem as? Track)?.id,
-//                "position": player.currentTime,
-//                "nextTrack": (player.previousItems.last as? Track)?.id,
-//                ])
-//            try player.previous()
-//            resolve(NSNull())
-//        } catch (_) {
-//            reject("no_previous_track", "There is no previous track", nil)
-//        }
+        print("Skipping to next track")
+        do {
+            sendEvent(withName: "playback-track-changed", body: [
+                "track": (player.currentItem as? Track)?.id,
+                "position": player.currentTime,
+                "nextTrack": (player.previousItems.last as? Track)?.id,
+                ])
+            try player.previous()
+            resolve(NSNull())
+        } catch (_) {
+            reject("no_previous_track", "There is no previous track", nil)
+        }
     }
     
     @objc(reset:rejecter:)
     public func reset(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         print("Resetting player.")
-        tracks.removeAll()
         player.stop()
         resolve(NSNull())
     }
@@ -342,16 +298,14 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     @objc(play:rejecter:)
     public func play(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         print("Starting/Resuming playback")
-//        try? player.play()
-        player.resume()
+        try? player.play()
         resolve(NSNull())
     }
     
     @objc(pause:rejecter:)
     public func pause(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         print("Pausing playback")
-//        try? player.pause()
-        player.pause()
+        try? player.pause()
         resolve(NSNull())
     }
     
@@ -365,8 +319,7 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     @objc(seekTo:resolver:rejecter:)
     public func seek(to time: Double, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         print("Seeking to \(time) seconds")
-//        try? player.seek(to: time)
-        player.seek(toTime: time)
+        try? player.seek(to: time)
         resolve(NSNull())
     }
     
@@ -386,36 +339,36 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     @objc(setRate:resolver:rejecter:)
     public func setRate(rate: Float, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         print("Setting rate to \(rate)")
-//        player.rate = rate
+        player.rate = rate
         resolve(NSNull())
     }
     
     @objc(getRate:rejecter:)
     public func getRate(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         print("Getting current rate")
-//        resolve(player.rate)
+        resolve(player.rate)
     }
     
     @objc(getTrack:resolver:rejecter:)
     public func getTrack(id: String, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-//        guard let track = player.queueManager.items.first(where: { ($0 as! Track).id == id })
-//            else {
-//                reject("track_not_in_queue", "Given track ID was not found in queue", nil)
-//                return
-//        }
+        guard let track = player.queueManager.items.first(where: { ($0 as! Track).id == id })
+            else {
+                reject("track_not_in_queue", "Given track ID was not found in queue", nil)
+                return
+        }
         
-//        resolve((track as? Track)?.toObject())
+        resolve((track as? Track)?.toObject())
     }
     
     @objc(getQueue:rejecter:)
     public func getQueue(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-        let serializedQueue = tracks.map { ($0 as! Track).toObject() }
+        let serializedQueue = player.queueManager.items.map { ($0 as! Track).toObject() }
         resolve(serializedQueue)
     }
     
     @objc(getCurrentTrack:rejecter:)
     public func getCurrentTrack(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-//        resolve((player.currentItem as? Track)?.id)
+        resolve((player.currentItem as? Track)?.id)
     }
     
     @objc(getDuration:rejecter:)
@@ -430,13 +383,12 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     
     @objc(getPosition:rejecter:)
     public func getPosition(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-//        resolve(player.currentTime)
-        resolve(player.progress)
+        resolve(player.currentTime)
     }
     
     @objc(getState:rejecter:)
     public func getState(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-        resolve(player.state.rawValue)
+        resolve(player.playerState.rawValue)
     }
     
     
@@ -484,7 +436,7 @@ public class RNTrackPlayer: RCTEventEmitter, STKAudioPlayerDelegate {
     }
     
     @objc func remoteSentPlayPause() {
-        if player.state == .paused {
+        if player.playerState == .paused {
             sendEvent(withName: "remote-play", body: nil)
             return
         }

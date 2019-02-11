@@ -1,5 +1,5 @@
 /** @format */
-console.log = () => {};
+// console.log = () => {};
 import {AppRegistry,AsyncStorage} from 'react-native';
 import TrackPlayer from 'react-native-track-player';
 import App from './App';

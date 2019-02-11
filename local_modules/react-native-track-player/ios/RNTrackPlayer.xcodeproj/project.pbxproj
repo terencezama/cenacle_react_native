@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005B6810220FDAE90022BC4B /* RNTrackPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58DF3A1F40C0F000C2105E /* RNTrackPlayer.swift */; };
 		9A0CF10E2046E5AC0093A5DF /* PitchAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0CF10D2046E5AC0093A5DF /* PitchAlgorithms.swift */; };
 		9B0E282E1F07D76F00B71D2A /* RNTrackPlayerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0E282D1F07D76F00B71D2A /* RNTrackPlayerBridge.m */; };
 		9B0E282F1F07D76F00B71D2A /* RNTrackPlayerBridge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B0E282C1F07D76F00B71D2A /* RNTrackPlayerBridge.h */; };
@@ -31,7 +32,6 @@
 		9B40782721F34CC800F61AA2 /* NowPlayingInfoProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B40781221F34CC700F61AA2 /* NowPlayingInfoProperty.swift */; };
 		9B40782821F34CC800F61AA2 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B40781321F34CC700F61AA2 /* AudioPlayer.swift */; };
 		9B40782921F34CC800F61AA2 /* QueuedAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B40781421F34CC700F61AA2 /* QueuedAudioPlayer.swift */; };
-		9B58DF3B1F40C0F000C2105E /* RNTrackPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58DF3A1F40C0F000C2105E /* RNTrackPlayer.swift */; };
 		9B78A2461F3F12BC002B5E3C /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78A2451F3F12BC002B5E3C /* Track.swift */; };
 		9B78A2481F3F12C9002B5E3C /* MediaURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78A2471F3F12C9002B5E3C /* MediaURL.swift */; };
 		9BFC1FDD1F61A8E8008795BF /* Capabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFC1FDC1F61A8E8008795BF /* Capabilities.swift */; };
@@ -51,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		005B680E220FD6950022BC4B /* RNTrackPlayerOriginal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNTrackPlayerOriginal.swift; sourceTree = "<group>"; };
 		9A0CF10D2046E5AC0093A5DF /* PitchAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchAlgorithms.swift; sourceTree = "<group>"; };
 		9B0E28291F07D76F00B71D2A /* libRNTrackPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTrackPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0E282C1F07D76F00B71D2A /* RNTrackPlayerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTrackPlayerBridge.h; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 				9B0E282C1F07D76F00B71D2A /* RNTrackPlayerBridge.h */,
 				9B0E282D1F07D76F00B71D2A /* RNTrackPlayerBridge.m */,
 				9B58DF3A1F40C0F000C2105E /* RNTrackPlayer.swift */,
+				005B680E220FD6950022BC4B /* RNTrackPlayerOriginal.swift */,
 			);
 			path = RNTrackPlayer;
 			sourceTree = "<group>";
@@ -292,9 +294,9 @@
 				9B78A2461F3F12BC002B5E3C /* Track.swift in Sources */,
 				9B40781921F34CC800F61AA2 /* TimeEventFrequency.swift in Sources */,
 				9B40781521F34CC800F61AA2 /* RemoteCommand.swift in Sources */,
+				005B6810220FDAE90022BC4B /* RNTrackPlayer.swift in Sources */,
 				9B40781D21F34CC800F61AA2 /* AVPlayerTimeObserver.swift in Sources */,
 				9A0CF10E2046E5AC0093A5DF /* PitchAlgorithms.swift in Sources */,
-				9B58DF3B1F40C0F000C2105E /* RNTrackPlayer.swift in Sources */,
 				9B40781621F34CC800F61AA2 /* RemoteCommandController.swift in Sources */,
 				9B40782521F34CC800F61AA2 /* MediaItemProperty.swift in Sources */,
 				9B40782221F34CC800F61AA2 /* AVPlayerWrapper.swift in Sources */,
