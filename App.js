@@ -31,7 +31,7 @@ const AppContainer = createAppContainer(MainNavigator);
 //FIREBASE
 import firebase from "react-native-firebase";
 import { Config, NavigationService } from "./src/services";
-import { notify } from "./src/services/notification";
+import { notify, notify_fcmnotif } from "./src/services/notification";
 firebase.firestore().enablePersistence = Config.firestore.persistence;
 //FIREBASE END
 
@@ -91,6 +91,11 @@ export default class App extends React.Component {
         console.log("onMessage", message);
         notify(message);
       });
+
+      this.notificationListener = firebase.notifications().onNotification((notification) => {
+        // Process your notification as required
+        notify_fcmnotif(notification);
+    });
   };
 
   componentDidMount() {
@@ -101,6 +106,7 @@ export default class App extends React.Component {
   componentWillUnmount() {
     this.notificationOpenedListener();
     this.messageListener();
+    this.notificationListener();
   }
   render() {
     return (
