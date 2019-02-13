@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		001218AD220072DD00A92F7B /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
 		001218AE220072DD00A92F7B /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBEBA90E78496B9C4AF485 /* RNPlaceholder.swift */; };
@@ -425,6 +424,8 @@
 
 /* Begin PBXFileReference section */
 		001C399321EDD12F00E79EBA /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		005B69282213AD2F0022BC4B /* config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = config.debug.xcconfig; sourceTree = "<group>"; };
+		005B69742213B0080022BC4B /* config.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = config.release.xcconfig; sourceTree = "<group>"; };
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
@@ -857,6 +858,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				005B69282213AD2F0022BC4B /* config.debug.xcconfig */,
+				005B69742213B0080022BC4B /* config.release.xcconfig */,
 				13B07FAE1A68108700A75B9A /* Cenacle */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CenacleTests */,
@@ -1775,7 +1778,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 157F33AD2DCA1FA588EDC582 /* Pods-Cenacle.debug.xcconfig */;
+			baseConfigurationReference = 005B69282213AD2F0022BC4B /* config.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cenacle/Cenacle.entitlements;
@@ -1809,7 +1812,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.terencez.cenacle;
+				PRODUCT_BUNDLE_IDENTIFIER = "${APPID}";
 				PRODUCT_NAME = Cenacle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -1819,7 +1822,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7397ADD56E237E697E3640C4 /* Pods-Cenacle.release.xcconfig */;
+			baseConfigurationReference = 005B69742213B0080022BC4B /* config.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cenacle/Cenacle.entitlements;
@@ -1851,7 +1854,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.terencez.cenacle;
+				PRODUCT_BUNDLE_IDENTIFIER = "${APPID}";
 				PRODUCT_NAME = Cenacle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

@@ -9,7 +9,6 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.support.v4.app.ActivityCompat;
 
-import com.brentvatne.react.ReactVideoPackage;
 import com.facebook.react.ReactApplication;
 import com.guichaguri.trackplayer.TrackPlayer;
 
@@ -63,7 +62,6 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
               new VectorIconsPackage(),
               new RNLanguagesPackage(),
               new RNGestureHandlerPackage(),
-              new ReactVideoPackage(),
               new RNFirebaseMessagingPackage()
       );
     }

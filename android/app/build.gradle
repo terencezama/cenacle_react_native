@@ -93,6 +93,9 @@ def enableSeparateBuildPerCPUArchitecture = true
  */
 def enableProguardInReleaseBuilds = false
 
+def jsonFile = file('../../config.json')
+def config = new groovy.json.JsonSlurper().parseText(jsonFile.text)
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -101,11 +104,12 @@ android {
         targetCompatibility 1.8
     }
     defaultConfig {
-        applicationId "com.terence.cenacle"
+        applicationId config.android.applicationId
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 204
-        versionName "1.5"
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+        resValue "string", "app_name", config.common.appName
 //        ndk {
 //            abiFilters "armeabi-v7a", "x86"
 //        }
@@ -153,7 +157,6 @@ android {
 
 dependencies {
     compile project(':react-native-track-player')
-    compile project(':react-native-video')
     compile project(':realm')
     compile project(':react-native-fs')
     compile project(':react-native-firebase')

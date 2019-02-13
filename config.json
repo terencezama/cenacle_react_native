@@ -1,7 +1,20 @@
 {
-    "env":"qa",
-    "firestore":{
-        "persistence":true
-    },
-    "store":"cenacle"
+  "env": "prod",
+  "firestore": {
+    "persistence": true
+  },
+  "store": "cenacle",
+  "android": {
+    "versionCode": 204,
+    "versionName": "1.5",
+    "applicationId": "com.terence.cenacle"
+  },
+  "ios": {
+    "version": "1.1",
+    "buildNumber": "1.1",
+    "appId": "com.terencez.cenacle"
+  },
+  "common": {
+    "appName": "Cenacle Du St Esprit"
+  }
 }

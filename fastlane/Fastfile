@@ -1,0 +1,7 @@
+lane :deploy do |options|
+    cenacle_deploy(options:options)
+  end
+  
+  lane :patch do |options|
+    patch_config(options:options)
+  end
